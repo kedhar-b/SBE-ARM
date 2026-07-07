@@ -13,15 +13,15 @@ function computeRates({ width, height, thickness, type }) {
     const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
     const weight2 = ((w + 30) * 2500 * 0.008 * t) / 1000;
     const finalWeight = weight1 + weight2;
-    const rate = (finalWeight * 82) / 2.5;
-    finalRate = Math.ceil(rate + 18 + 0.1 * rate + 2);
+    const rate = (finalWeight * 80) / 2.5;
+    finalRate = Math.ceil(rate + 18 + 0.02 * rate);
   } else if (type === "Ladder") {
     const weight1 = ((h + 30) * 2500 * 0.008 * 2 * t) / 1000;
     const weight2 = (65 * w * 0.008 * 10 * t) / 1000;
     const finalWeight = weight1 + weight2;
     const finalWeight2 = finalWeight * 82;
-    const rate = (finalWeight2 + 95) / 2.5;
-    finalRate = Math.ceil(rate + 0.02 * rate + 2);
+    const rate = (finalWeight2 + 80) / 2.5;
+    finalRate = Math.ceil(rate + 0.02 * rate);
   } else if (type == "HOT DIP Galvanised Ladder Tray") {
     const weight1 = ((h + 30) * 2500 * 0.008 * 2 * t) / 1000;
     const weight2 = (65 * w * 0.008 * 10 * t) / 1000;
@@ -33,30 +33,30 @@ function computeRates({ width, height, thickness, type }) {
     const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
     const weight2 = ((w + 30) * 2500 * 0.008 * t) / 1000;
     const finalWeight = weight1 + weight2;
-    const rate = (finalWeight * 135) / 2.5;
-    finalRate = Math.ceil(rate + 18 + 0.12 * rate);
+    const rate = (finalWeight * 130) / 2.5;
+    finalRate = Math.ceil(rate + 18 + 0.02 * rate);
   } else if (type == "HOT DIP Galvanised Cable Tray") {
     const rate = (w + h * 2) * 2500 * 0.008 * t;
     const updatedRate = rate / 1000;
-    const totalRate = updatedRate * 135;
+    const totalRate = updatedRate * 130;
     const totalRate2 = totalRate / 2.5;
-    const totalRate3 = Math.ceil(totalRate2 + 24 + 0.12 * totalRate2);
+    const totalRate3 = Math.ceil(totalRate2 + 24 + 0.02 * totalRate2);
     finalRate = Math.ceil(totalRate3);
 
     const w1 = ((w + 30) * 2500 * 0.008 * t) / 1000;
-    const w2 = (w1 * 135) / 2.5 + 14;
-    coverRate = Math.ceil(w2 + 0.12 * w2);
+    const w2 = (w1 * 130) / 2.5 + 14;
+    coverRate = Math.ceil(w2 + 0.02 * w2);
   } else {
     const rate = (w + h * 2) * 2500 * 0.008 * t;
     const updatedRate = rate / 1000;
-    const totalRate = updatedRate * 82;
+    const totalRate = updatedRate * 80;
     const totalRate2 = totalRate / 2.5;
-    const totalRate3 = Math.ceil(totalRate2 + 14 + 0.1 * totalRate2);
-    finalRate = Math.ceil(totalRate3 + 2);
+    const totalRate3 = Math.ceil(totalRate2 + 14 + 0.02 * totalRate2);
+    finalRate = Math.ceil(totalRate3);
 
     const w1 = ((w + 30) * 2500 * 0.008 * t) / 1000;
-    const w2 = (w1 * 66) / 2.5 + 4;
-    coverRate = Math.ceil(w2 + 0.1 * w2);
+    const w2 = (w1 * 80) / 2.5 + 4;
+    coverRate = Math.ceil(w2 + 0.02 * w2);
   }
 
   return { finalRate, coverRate };
