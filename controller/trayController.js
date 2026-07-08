@@ -50,6 +50,15 @@ function computeRates({ width, height, thickness, type }) {
     const w1 = ((w + 30) * 2500 * 0.008 * t) / 1000;
     const w2 = (w1 * 130) / 2.5 + 14;
     coverRate = Math.ceil(w2 + 0.02 * w2);
+  } 
+    else if(type == "Powder-Coated Cable Tray"){
+    const rate1 = w + (h * 2);
+    const rate2 = 1220 / rate1;
+    const rate3 = 32 / rate2;
+    const rate4 = (rate3 * 2) *13;
+    const rate5= (rate4 / 2.5) + 10 + 0.02;
+    finalRate = Math.ceil(rate5)
+    
   } else {
     const rate = (w + h * 2) * 2500 * 0.008 * t;
     const updatedRate = rate / 1000;
