@@ -22,6 +22,10 @@ function computeRates({ width, height, thickness, type }) {
     const finalWeight2 = finalWeight * 82;
     const rate = (finalWeight2 + 80) / 2.5;
     finalRate = Math.ceil(rate + 0.02 * rate);
+  }else if(type=="C-Bend cable tray"){
+    const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
+    const rate=(weight1*80)/2.5;
+    finalRate=Math.ceil(rate+14+0.02*rate);
   } else if (type == "HOT DIP Galvanised Ladder Tray") {
     const weight1 = ((h + 30) * 2500 * 0.008 * 2 * t) / 1000;
     const weight2 = (65 * w * 0.008 * 10 * t) / 1000;
