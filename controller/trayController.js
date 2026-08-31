@@ -62,13 +62,13 @@ function computeRates({ width, height, thickness, type }) {
   } else {
     const rate = (w + h * 2) * 2500 * 0.008 * t;
     const updatedRate = rate / 1000;
-    const totalRate = updatedRate * 80;
+    const totalRate = updatedRate * 81.5;
     const totalRate2 = totalRate / 2.5;
     const totalRate3 = Math.ceil(totalRate2 + 14 + 0.02 * totalRate2);
     finalRate = Math.ceil(totalRate3);
 
     const w1 = ((w + 30) * 2500 * 0.008 * t) / 1000;
-    const w2 = (w1 * 80) / 2.5 + 4;
+    const w2 = (w1 * 81.5) / 2.5 + 4;
     coverRate = Math.ceil(w2 + 0.02 * w2);
   }
 
