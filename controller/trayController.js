@@ -8,23 +8,25 @@ function computeRates({ width, height, thickness, type }) {
 
   let finalRate = 0,
     coverRate = 0;
-
+//raceway
   if (type === "Raceway") {
     const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
     const weight2 = ((w + 30) * 2500 * 0.008 * t) / 1000;
     const finalWeight = weight1 + weight2;
-    const rate = (finalWeight * 81.5) / 2.5;
+    const rate = (finalWeight * 83.5) / 2.5;
     finalRate = Math.ceil(rate + 18 + 0.02 * rate);
+  //ladder
   } else if (type === "Ladder") {
     const weight1 = ((h + 30) * 2500 * 0.008 * 2 * t) / 1000;
     const weight2 = (65 * w * 0.008 * 10 * t) / 1000;
     const finalWeight = weight1 + weight2;
     const finalWeight2 = finalWeight * 82;
-    const rate = (finalWeight2 + 81.5) / 2.5;
+    const rate = (finalWeight2 + 83.5) / 2.5;
     finalRate = Math.ceil(rate + 0.02 * rate);
+  //cbend
   }else if(type=="C-Bend cable tray"){
     const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
-    const rate=(weight1*81.5)/2.5;
+    const rate=(weight1*83.5)/2.5;
     finalRate=Math.ceil(rate+14+0.02*rate);
   } else if (type == "HOT DIP Galvanised Ladder Tray") {
     const weight1 = ((h + 30) * 2500 * 0.008 * 2 * t) / 1000;
@@ -58,17 +60,17 @@ function computeRates({ width, height, thickness, type }) {
     const rate4 = (rate3 * 2) *13;
     const rate5= (rate4 / 2.5) + 10 + 0.02;
     finalRate = Math.ceil(rate5)
-    
+    //cabletray
   } else {
     const rate = (w + h * 2) * 2500 * 0.008 * t;
     const updatedRate = rate / 1000;
-    const totalRate = updatedRate * 81.5;
+    const totalRate = updatedRate * 83.5;
     const totalRate2 = totalRate / 2.5;
     const totalRate3 = Math.ceil(totalRate2 + 14 + 0.02 * totalRate2);
     finalRate = Math.ceil(totalRate3);
 
     const w1 = ((w + 30) * 2500 * 0.008 * t) / 1000;
-    const w2 = (w1 * 81.5) / 2.5 + 4;
+    const w2 = (w1 * 83.5) / 2.5 + 4;
     coverRate = Math.ceil(w2 + 0.02 * w2);
   }
 
