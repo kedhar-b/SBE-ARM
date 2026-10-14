@@ -34,7 +34,7 @@ function computeRates({ width, height, thickness, type }) {
     const finalWeight = weight1 + weight2;
     const finalWeight2 = finalWeight * 139;
     const rate = (finalWeight2 + 95) / 2.5;
-    finalRate = Math.ceil(rate + 0.12 * rate);
+    finalRate = Math.ceil(rate + 0.02 * rate);
   } else if (type == "HOT DIP Galvanised Raceway Tray") {
     const weight1 = ((w + h * 2 + 30) * 2500 * 0.008 * t) / 1000;
     const weight2 = ((w + 30) * 2500 * 0.008 * t) / 1000;
